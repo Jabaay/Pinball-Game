@@ -7,7 +7,7 @@ By: Rajeev, Liam, Vince and Jiabei <br><br>
 
 **Ball Launcher** - Will be a spring-loaded mechanical system.
 
-**Ball Flippers**
+**Ball Flippers** -  Mechanical flippers using solenoids or Arduino-controlled servo motors.
 
 **Hittable Pins** - Pins must detect each hit so we will likely use a vibration sensor of some sort to detect. We can have a range for how many points are awarded for how hard each ball is hit as well.
 
@@ -23,5 +23,5 @@ By: Rajeev, Liam, Vince and Jiabei <br><br>
 
 **Light System** - LED displays to help decorate the board which lights up based on how well the user is playing. More points will mean more LEDs light up. 
 
-We will implement the design using 2-3 Arduino Rev3’s which will communicate with each other, most likely through hardwiring.
+We will implement the design using 2-3 Arduino Rev3 boards which will communicate with each other, most likely through hardwiring.
 
