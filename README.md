@@ -1,7 +1,7 @@
 # Pinball-Game
-An embedded system that modifies a cardboard pinball machine into an electrical game with "pinball-like" features. <br><br>
+An embedded system that modifies a cardboard pinball machine into an electrical game with "pinball-like" features. <br>
 
-Team: Rajeev, Liam, Vince and Jiabei <br><br>
+By: Rajeev, Liam, Vince and Jiabei <br><br>
 
 ## Pinball Machine Features:
 
