@@ -1,4 +1,4 @@
-# Pinball-Game
+# NOT PinBox 3000 BUT SOMETHING BETTER
 An embedded system that modifies a cardboard pinball machine into an electrical game with "pinball-like" features. <br>
 
 By: Rajeev, Liam, Vince and Jiabei <br><br>
