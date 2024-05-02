@@ -1,27 +1,33 @@
-#include <LiquidCrystal.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
 
-int vib_pin=7;
-const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
-LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+int vib_pin = 7;
+int score = 0; // Initialize the score variable
+
+LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 void setup() {
-  pinMode(vib_pin,INPUT);
-  lcd.begin(16, 2);
+  pinMode(vib_pin, INPUT);
   Serial.begin(9600);
+  lcd.begin();
+  lcd.backlight();
 }
 
 void loop() {
-  int score;
-  int val;
-  val=digitalRead(vib_pin);
-  if(val==1)
-  {
-    score+=10;
-    delay(1000);
-  }
-  lcd.setCursor(0,1);
-  lcd.print(score);
-  Serial.println(score);
-  delay(100);
+  int val = digitalRead(vib_pin);
 
+  if (val == HIGH) { // If vibration is sensed
+    score += 10; // Increase the score by 10
+    displayScore(); // Update the score on the LCD
+    delay(2000); // Add a delay to avoid multiple increments for a single vibration
+  }
+}
+
+void displayScore() {
+  lcd.clear(); // Clear the LCD screen
+  lcd.setCursor(0, 1); // Set the cursor to the first column of the second row
+  lcd.print("Score: "); // Print "Score: " on the LCD
+  lcd.print(score); // Print the current score on the LCD
+  Serial.print("Score: "); // Print "Score: " on the Serial monitor
+  Serial.println(score); // Print the current score on the Serial monitor
 }
