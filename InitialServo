@@ -1,0 +1,23 @@
+#include <Servo.h>
+
+Servo myServo;
+
+int pos = 0;
+void setup() {
+  Serial.begin(9600);
+  myServo.attach(9);
+  myServo.write(0);
+  delay(1000);
+}
+
+void loop() {
+  if(pos < 180) {
+    myServo.write(pos);
+    pos += 10;
+    delay(250);
+  } else {
+    myServo.write(pos);
+    pos = 0;
+  }
+
+}
